@@ -28,6 +28,10 @@ void open_files(const char *file_from, const char *file_to,
 int *fd_from, int *fd_to)
 {
 *fd_from = open(file_from, O_RDONLY);
+if (access(file_from, F_OK) == -1)
+{
+  print_error("Error: file_from does not exist");
+}
 if (*fd_from == -1)
 print_error(98, "Error: Can't read from file %s\n", file_from);
 
