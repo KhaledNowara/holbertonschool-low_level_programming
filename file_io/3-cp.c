@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
 int fd_from, fd_to;
 
 if (argc != 3)
-print_error(97, "Usage: %s file_from file_to\n", argv[0]);
+print_error(97, "Usage: cp file_from file_to\n", argv[0]);
 
 open_files(argv[1], argv[2], &fd_from, &fd_to);
 copy_content(fd_from, fd_to, argv[1], argv[2]);
